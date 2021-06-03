@@ -1,8 +1,15 @@
+const dotenv = require('dotenv')
+const path = require('path')
+
+dotenv.config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: 'My Gatsby Starter with TailwindCSS',
+    description: `Kick off your next, great Gatsby project with this custom starter.`,
+    author: `Maya E.`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -28,9 +35,21 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-gatsby-cloud`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          '@components': path.resolve(__dirname, 'src/components'),
+          '@services': path.resolve(__dirname, 'src/services'),
+          '@styles': path.resolve(__dirname, 'src/styles'),
+          '@utils': path.resolve(__dirname, 'src/utils'),
+        },
+        extensions: [],
+      },
+    },
+    `gatsby-plugin-styled-components`,
   ],
 }

@@ -1,15 +1,17 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import * as React from 'react'
+import { Link } from 'gatsby'
+import tw from 'twin.macro'
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import { Layout, Metadata } from '@components'
 
 const SecondPage = () => (
   <Layout>
-    <Seo title="Page two" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+    <Metadata title="Page Two" />
+    <h1 tw="font-bold text-4xl text-gray-800">Hi from the second page</h1>
+    <p tw="font-serif my-5 space-y-4 text-gray-700">Welcome to page 2</p>
+    <Link to="/" tw="font-serif text-blue-600 underline">
+      Go back to the homepage
+    </Link>
   </Layout>
 )
 
