@@ -7,7 +7,7 @@ dotenv.config({
 
 module.exports = {
   siteMetadata: {
-    title: 'My Gatsby Starter with TailwindCSS',
+    title: 'My Gatsby Starter with Twin.Macro',
     description: `Kick off your next, great Gatsby project with this custom starter.`,
     author: `Maya E.`,
   },
